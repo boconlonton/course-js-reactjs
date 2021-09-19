@@ -1,0 +1,17 @@
+h1 {
+    color: blue;
+    text-align: center;
+    font-style: italic;
+    font-weight: bold;
+    text-decoration: overline;
+    text-transform: capitalize; /* Uppercase, Lowercase, Capitalize */
+
+}
+p {
+    color: brown;
+    text-align: justify;
+    letter-spacing: 1px;
+    word-spacing: 1px;
+    line-height: 1.5;
+    font-family: 'Open Sans', sans-serif;
+}
