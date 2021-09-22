@@ -22,9 +22,6 @@ addElement = function (){
         alert('Please enter task name');
     };
 }
-btnAddTask.addEventListener('click', function() {
-    addElement();
-})
 
 inputTask.addEventListener('input', function(e){
     currentInputValue = e.target.value;
@@ -35,3 +32,5 @@ inputTask.addEventListener('keyup', function(e){
         addElement();
     };
 });
+
+btnAddTask.addEventListener('click', addElement);
