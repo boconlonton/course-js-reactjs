@@ -4,29 +4,34 @@ var listTask = document.getElementById("to-do-list");
 
 var count = 0;
 
-addElement = function (value){
-    if (!value){
-        alert('Please enter task name')
-    }
-    else
-    {
+var currentInputValue = '';
+
+addElement = function (){
+    if (currentInputValue !== undefined && currentInputValue !== null 
+        && currentInputValue !== ''){
         var newListItem = document.createElement('li');
-        var newTask = document.createTextNode(value);
+        var newTask = document.createTextNode(currentInputValue);
         newListItem.appendChild(newTask);
         newListItem.id = count + 1;
         listTask.appendChild(newListItem);
+        inputTask.value = '';
+        currentInputValue = '';
+    }
+    else
+    {
+        alert('Please enter task name');
     };
 }
 btnAddTask.addEventListener('click', function() {
-    addElement(inputTask.value);
+    addElement();
 })
+
+inputTask.addEventListener('input', function(e){
+    currentInputValue = e.target.value;
+});
 
 inputTask.addEventListener('keyup', function(e){
     if (e.keyCode === 13){
-        addElement(inputTask.value);
-    }
+        addElement();
+    };
 });
-
-inputTask.addEventListener('focus', function(){
-    inputTask.value = '';
-})
